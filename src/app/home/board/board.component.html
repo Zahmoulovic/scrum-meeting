@@ -1,0 +1,64 @@
+
+<div class="dashboard">
+  <div class="row cork-board" src="./assets/images/paper.png">
+    <div class="column-class right-bar col-md-2 ">
+      <div class="card-outline-success full-height">
+        <div class="lined-title">
+          TO DO
+        </div>
+        <div class="card-block scroll-list full-height"  droppable
+     [dragOverClass]="'empty-card-placement-big'"
+     [dragHintClass]="'drag-hint'" (onDrop)="onToDoDrop($event)">
+          <div class="list-group" >
+            <li class="list-group-item custom-list-cards" *ngFor="let card of cardsTodo" >
+              <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                             [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'UP'"></app-placement>
+              <div class="list-group-item-action">
+                <app-card [card]="card"></app-card>
+              </div>
+              <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                             [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'DOWN'"></app-placement>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-class right-bar col-md-2 ">
+      <div class="card-outline-success full-height">
+        <div class="lined-title">IN PROGRESS</div>
+        <div class="card-block scroll-list full-height"  droppable
+     [dragOverClass]="'empty-card-placement-big'"
+     [dragHintClass]="'drag-hint'" (onDrop)="onInProgressDrop($event)">
+         <li class="list-group-item custom-list-cards" *ngFor="let card of cardsInProgress" >
+              <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                             [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'UP'"></app-placement>
+              <div class="list-group-item-action" [ngClass]="{'custom-create-card': card.id===0, 'custom-card': card.id!==0}">
+                <app-card [card]="card" ></app-card>
+              </div>
+              <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                             [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'DOWN'"></app-placement>
+            </li>
+        </div>
+      </div>
+    </div>
+    <div class="column-class right-bar col-md-2 ">
+      <div class="card-outline-success full-height">
+        <div class="lined-title">DONE</div>
+        <div class="card-block scroll-list full-height"  droppable
+     [dragOverClass]="'empty-card-placement-big'"
+     [dragHintClass]="'drag-hint'" (onDrop)="onDoneDrop($event)">
+          <li class="list-group-item custom-list-cards" *ngFor="let card of cardsDone">
+            <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                           [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'UP'"></app-placement>
+            <div class="list-group-item-action" [ngClass]="{'custom-create-card': card.id===0, 'custom-card': card.id!==0}">
+              <app-card [card]="card"></app-card>
+            </div>
+            <app-placement [(cardsTodo)]="cardsTodo" [(cardsInProgress)]="cardsInProgress"
+                           [(cardsDone)]="cardsDone" [currentCard]="card" [placementType]="'DOWN'"></app-placement>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,55 @@
+div.scroll-list {
+  overflow: auto;
+}
+
+.drag-target-border {
+  border: #00bfff dashed 2px;
+}
+
+.drag-target-border-green {
+  border: #3c763d dashed 2px;
+}
+
+.card-outline-success {
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+ 
+
+.card-inverse {
+  color: rgba(255,255,255,.65);
+}
+
+.card-success {
+  background-color: #809098;
+  border-color: #809098;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+
+.custom-list-cards {
+  padding: 0;
+  background-color: #fff0;
+}

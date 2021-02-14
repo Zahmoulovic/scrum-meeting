@@ -1,0 +1,21 @@
+.empty-card-placement-down {
+  width: 100%;
+  height: 21px;
+  margin-top: -25px;
+}
+.empty-card-placement-up {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+}
+.empty-card-placement-big {
+  height: 70px;
+}
+.drag-hint {
+ // border: #ffc100 dashed 2px;
+}
+
+.drag-over {
+  border: #ff525b dashed 2px;
+}
+ 

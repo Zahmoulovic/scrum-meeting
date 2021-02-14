@@ -1,0 +1,8 @@
+<div *ngIf="card.id===0" class="custom-create-card full-height disable-copy">
+    <h2>{{card?.title}}</h2>
+</div>
+<div class="custom-card full-height disable-copy" [draggable] [dragClass]="'active'" [dragData]="card" [dragEnabled]="true"
+     *ngIf="card.id!==0">
+  <h2>{{card?.title}}</h2>
+  <p>{{card?.description}}</p>
+</div>

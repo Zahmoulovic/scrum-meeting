@@ -1,0 +1,11 @@
+<div id="wrapper" class="wrapper-background">
+  <app-top-menu [toggleLeftMenu]="toggleLeftMenu" (toggleLeftMenuEvent)="toggleLeftMenu=$event" [(user)]="user"></app-top-menu>
+  <div>
+    <app-left-menu [toggleLeftMenu]="toggleLeftMenu"></app-left-menu>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-login class="customised-login-form"
+           *ngIf="!user?.active"
+           [(user)]="user">
+</app-login>
